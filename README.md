@@ -42,7 +42,7 @@ salvar_dados_csv(dados_sensores, 'dados_sensores.csv')
 Use o comando hdfs dfs -put para carregar o arquivo CSV no HDFS.
 
 ````sh
-hdfs dfs -put dados_sensores.csv /user/seu_usuario/dados_sensores.csv
+hdfs dfs -put dados_sensores.csv /user/Erebos/dados_sensores.csv
 
 ````
 3. Análise de Dados com PySpark
@@ -58,7 +58,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Carrega os dados do HDFS
-dados_sensores_df = spark.read.csv("hdfs:///user/seu_usuario/dados_sensores.csv", header=True, inferSchema=True)
+dados_sensores_df = spark.read.csv("hdfs:///user/Erebos/dados_sensores.csv", header=True, inferSchema=True)
 
 # Exibe o esquema dos dados
 dados_sensores_df.printSchema()
@@ -88,7 +88,7 @@ resultados = [
 ]
 
 resultados_df = spark.createDataFrame(resultados)
-resultados_df.write.csv("hdfs:///user/seu_usuario/resultados_analise.csv", header=True)
+resultados_df.write.csv("hdfs:///user/Erebos/resultados_analise.csv", header=True)
 
 # Encerra a sessão Spark
 spark.stop()
@@ -141,7 +141,7 @@ salvar_dados_csv(dados_sensores, 'dados_sensores.csv')
 Use o comando `hdfs dfs -put` para carregar o arquivo CSV no HDFS.
 
 ```sh
-hdfs dfs -put dados_sensores.csv /user/seu_usuario/dados_sensores.csv
+hdfs dfs -put dados_sensores.csv /user/Erebos/dados_sensores.csv
 ```
 
 ### 3. Análise de Dados com PySpark
@@ -157,7 +157,7 @@ spark = SparkSession.builder \
     .getOrCreate()
 
 # Carrega os dados do HDFS
-dados_sensores_df = spark.read.csv("hdfs:///user/seu_usuario/dados_sensores.csv", header=True, inferSchema=True)
+dados_sensores_df = spark.read.csv("hdfs:///user/Erebos/dados_sensores.csv", header=True, inferSchema=True)
 
 # Exibe o esquema dos dados
 dados_sensores_df.printSchema()
@@ -187,7 +187,7 @@ resultados = [
 ]
 
 resultados_df = spark.createDataFrame(resultados)
-resultados_df.write.csv("hdfs:///user/seu_usuario/resultados_analise.csv", header=True)
+resultados_df.write.csv("hdfs:///user/Erebos/resultados_analise.csv", header=True)
 
 # Encerra a sessão Spark
 spark.stop()
